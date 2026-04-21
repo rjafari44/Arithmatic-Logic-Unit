@@ -17,14 +17,8 @@ module alu32_tb;
         .Zero(Zero)
     );
 
-    // =========================================
-    // EASY FORMAT CONTROL (EDIT THESE ONLY)
-    // =========================================
     parameter SP = "   ";   // spacing between columns
 
-    // =========================================
-    // PRINT TASK (edit spacing here if needed)
-    // =========================================
     task print_row;
         input integer idx;
         input [31:0] expected;
@@ -44,10 +38,10 @@ module alu32_tb;
 
     initial begin
 
-        // Header (manually formatted so it's safe)
+        // Header (manually formatted)
         $display("#   A          B          Op     Expected   CO  Z   OV");
 
-        // ================= TESTS =================
+        // Tests
 
         A = 32'h3C0F_A5B2; B = 32'h0FF0_5A4D; Op = 4'b0000; #20;
         print_row(1, 32'h0C00_0000);
